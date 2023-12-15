@@ -1,4 +1,10 @@
 {
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "cd client && npm run build",
+    "client": "cd client && npm run dev",
+    "server": "cd server && npm start"
+  },
   "dependencies": {
     "pg": "^8.11.3"
   }
