@@ -17,9 +17,6 @@ app.use(bodyParser.json())
 app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/dist', 'index.html'))
 })
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`)
-})
 
 app.get('/api/links', (req, res) => {
   pool.query('SELECT * FROM favlinks', (error, results) => {
@@ -116,3 +113,7 @@ app.delete('/api/links/:id', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`)
+})
